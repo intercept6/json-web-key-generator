@@ -1,13 +1,27 @@
-json-web-key-generator
-======================
+# json-web-key-generator on Docker
 
-A commandline Java-based generator for JSON Web Keys (JWK) and JSON Private/Shared Keys (JPSKs).
+JSON Web Key (JWK) および JSON Private/Shared Keys (JPSKs) のコマンドライン Java ベースのジェネレータです。
 
-=====================
+このリポジトリは、[Apache 2.0 ライセンス](https://www.apache.org/licenses/LICENSE-2.0)で配布されている製作物が含まれています。
 
-To compile, run `mvn package`. This will generate a `json-web-key-generator-0.9-SNAPSHOT-jar-with-dependencies.jar` in the `/target` directory.
+- [mitreid\-connect/json\-web\-key\-generator: A Java\-based generator for JWK and JPSKs](https://github.com/mitreid-connect/json-web-key-generator)
 
-To generate a key, run `java -jar target/json-web-key-generator-0.9-SNAPSHOT-jar-with-dependencies.jar -t <keytype>`. Several other arguments are defined which may be required depending on your key type:
+## 実行方法
+
+Docker Hub のイメージで実行する場合
+
+```bash
+docker run intercept6/json-web-key-generator -t <keyType> [options]
+```
+
+自分でビルドして実行する場合
+
+```bash
+docker build -t json-web-key-generator .
+docker run json-web-key-generator -t <keyType> [options]
+```
+
+## コマンドオプション
 
 ```
 usage: java -jar json-web-key-generator.jar -t <keyType> [options]
